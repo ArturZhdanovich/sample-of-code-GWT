@@ -1,0 +1,42 @@
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+             xmlns:g="urn:import:com.google.gwt.user.client.ui"
+             xmlns:dotpopup="urn:import:app.components.client.dotpopup"
+             xmlns:b="urn:import:app.components.client.base"
+             xmlns:u="urn:import:app.components.client.upload"
+             xmlns:a="urn:import:app.m8.web.client.attachment"
+             xmlns:m="urn:import:app.components.client.maskpanel"
+             xmlns:ce="urn:import:app.components.client.contenteditable"
+             xmlns:components="urn:import:app.m8.web.client.view.calendarmodule.notes.note.components">
+
+    <ui:with field="msgs" type="app.m8.web.client.message.AppConstants"/>
+
+    <u:DropFilesPanel ui:field="dropContainer">
+        <g:FlowPanel ui:field="contentWrapper" styleName="reminders-item">
+            <g:FlowPanel styleName="reminders-item__tools-left">
+                <dotpopup:DotActionView ui:field="dotActionView" addStyleNames="reminders-item__bullet reminders-item__hover-visible"/>
+                <g:Label ui:field="dragIcon" styleName="reminders-item__btn reminders-item__btn-dnd reminders-item__hover-visible"/>
+                <g:Label ui:field="favoriteIcon" styleName="reminders-item__btn reminders-item__btn-favorite"/>
+            </g:FlowPanel>
+            <g:FlowPanel styleName="reminders-item__container">
+                <g:FlowPanel styleName="reminders-item__content--t">
+                    <m:MaskedFlowPanel addStyleNames="reminders-item__content">
+                        <b:ExpandingArea ui:field="name" addStyleNames="reminders-item__area" placeholder="{msgs.noteNameEmptyPlaceholder}" capitalizeFirstLetter="true" defaultTooltipBehavior="true" tooltipTopPosition="true" tooltipRightAlign="true" oneLineOnly="true"/>
+                    </m:MaskedFlowPanel>
+                    <g:FlowPanel styleName="reminders-item__tools-right">
+                        <g:Label ui:field="expandIcon" styleName="reminders-item__btn reminders-item__btn-open reminders-item__hover-visible"/>
+                        <components:NoteDateField ui:field="dateField" withValidation="true"/>
+                        <components:NoteTimeField ui:field="timeField" withValidation="true"/>
+                        <g:Label ui:field="completeBtn" styleName="reminders-item__btn reminders-item__btn-delete reminders-item__hover-visible"/>
+                    </g:FlowPanel>
+                </g:FlowPanel>
+                <g:FlowPanel styleName="reminders-item__content--b">
+                    <ce:SimpleLinksTextArea ui:field="description" addStyleNames="reminders-item__area reminders-item__description" contentEditable="true" visible="false"/>
+                    <a:AttachmentPanelView ui:field="attachmentView"/>
+                    <g:Label ui:field="restoreNodelabel" styleName="reminders-item__link link-emulation" text="{msgs.restoreNode}" visible="false"/>
+                    <g:Label ui:field="copyIcon" styleName="reminders-item__btn reminders-item__btn-copy reminders-item__hover-visible" visible="false"/>
+                </g:FlowPanel>
+            </g:FlowPanel>
+        </g:FlowPanel>
+    </u:DropFilesPanel>
+
+</ui:UiBinder>

@@ -1,0 +1,9 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+    <g:FlowPanel styleName="reminders-container">
+        <g:FlowPanel ui:field="notesHeaderContainer" styleName="reminders-container__header"/>
+        <g:FlowPanel ui:field="notesTableContainer" styleName="reminders-container__body"/>
+    </g:FlowPanel>
+
+</ui:UiBinder>

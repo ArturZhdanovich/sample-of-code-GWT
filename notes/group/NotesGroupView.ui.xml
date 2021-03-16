@@ -1,0 +1,20 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'
+             xmlns:group2="urn:import:app.m8.web.client.view.calendarmodule.notes.group">
+
+    <g:FlowPanel styleName="reminders-group">
+        <g:FlowPanel styleName="reminders-group__header">
+            <g:FlowPanel styleName="reminders-group__header-left">
+                <g:Label ui:field="header" styleName="reminders-group__header-label"/>
+                <g:Label ui:field="plusBtn" styleName="reminders-item__btn reminders-group__header-add-btn reminders-group__hover-visible"/>
+            </g:FlowPanel>
+            <g:FlowPanel styleName="reminders-group__header-right">
+                <group2:NotesGroupDateField ui:field="dateField" dateFieldSize="_12" addStyleNames="reminders-group__header-date reminders-group__hover-visible"/>
+                <g:Label ui:field="printBtn" styleName="reminders-item__btn reminders-group__header-print-btn reminders-group__header-hover-visible"/>
+            </g:FlowPanel>
+        </g:FlowPanel>
+        <g:FlowPanel ui:field="noteAreaContainer" styleName="reminders-group__note-area" visible="false" />
+        <g:FlowPanel ui:field="notesContainer" styleName="reminders-group__body"/>
+    </g:FlowPanel>
+
+</ui:UiBinder>

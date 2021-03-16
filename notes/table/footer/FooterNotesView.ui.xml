@@ -1,0 +1,11 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+             xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+    <ui:with field="msgs" type="app.m8.web.client.message.AppConstants"/>
+
+    <g:FlowPanel styleName="reminders-group__footer">
+        <g:Label ui:field="allNotesBtn" styleName="reminders-group__footer-btn reminders-group__footer-btn--all" visible="false"/>
+        <g:Label ui:field="syncBtn" styleName="reminders-group__footer-btn reminders-group__footer-btn--sync" text="{msgs.sync}" visible="false"/>
+    </g:FlowPanel>
+
+</ui:UiBinder>
